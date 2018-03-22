@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Рейтинг продаж напитков Бара</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.0/htmlwidgets.js"></script>
+<script src="site_libs/d3-3.5.2/d3.min.js"></script>
+<script src="site_libs/d3wordcloud-1/d3.layout.cloud.js"></script>
+<script src="site_libs/d3wordcloud-binding-0.1/d3wordcloud.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.4/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/jszip-1.10.16/jszip.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="shortcut icon" href="./wwwinc/favicon.ico" type="image/x-icon">
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="wwwinc\stylem.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Анализ Продаж Ресторана</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Начало</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Выручка
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="incom10_planfact.html">Выручка план-факт</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Меню
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="prod10_kitrate.html">Рейтинг продаж блюд Кухни</a>
+    </li>
+    <li>
+      <a href="prod11_barrate.html">Рейтинг продаж напитков Бара</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="info.html">
+    <span class="fa fa-info"></span>
+     
+    Инфо
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Рейтинг продаж напитков Бара</h1>
+
+</div>
+
+
+<p>Рейтинг напитков составляется по результатам продаж, на основе выручки и количестве проданных порций. Каждый напиток оценивается в целом и в контексте своей группы.</p>
+<div id="-" class="section level1">
+<h1>Топ напитков</h1>
+<div id="htmlwidget-7adc703e12195084a968" style="width:100%;height:336px;" class="d3wordcloud html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7adc703e12195084a968">{"x":{"data":{"text":["Чай черный","Чай ягодный","Гиннес 0.5","Чай зелёный","Шпатен 0.5","Кофе Американо","Крушовица 0.5","Чай травяной сбор","Морс клюквенный","Кофе Эспрессо"],"freq":[100,92,78,74,72,58,54,50,48,42],"size":[100,92,78,74,72,58,54,50,48,42]},"pars":{"font":"Open Sans","padding":10,"rotmin":0,"rotmax":0,"tooltip":false,"rangesizefont":[10,90],"sizescale":"linear","colorscale":"linear","spiral":"archimedean","colors":["#00cc00","#009900"],"every_word_has_own_color":false,"missing_colors":false,"label":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="-" class="section level1">
+<h1>Детальная таблица</h1>
+<p>Рейтинг измеряется по шкале от 0 до 100 баллов. По каждому напитку указан рейтинг в своей группе и общий, в целом по меню. Разметка цветом: зелёный - хиты, серый - середняки, красный - аутсайдеры, жёлтый - на грани аутсайдеров.</p>
+<div id="htmlwidget-e94b7555a6427ac415e0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e94b7555a6427ac415e0">{"x":{"filter":"none","extensions":["Buttons"],"data":[["Вино","Вино","Коктейли акогольные","Коктейли акогольные","Коктейли акогольные","Кофе","Кофе","Кофе","Крепкий Алкоголь","Крепкий Алкоголь","Пиво","Пиво","Пиво","Соки и морсы","Соки и морсы","Соки и морсы","Чай","Чай","Чай","Чай"],["Вино белое бокал","Вино красное бокал","Б52","Маргарита","Мохито","Кофе Американо","Кофе Капучино","Кофе Эспрессо","Виски 50 мл","Ром 50 мл","Гиннес 0.5","Крушовица 0.5","Шпатен 0.5","Апельсиновый фреш","Морс клюквенный","Томатный сок","Чай зелёный","Чай травяной сбор","Чай черный","Чай ягодный"],[200,200,300,250,340,100,120,100,230,120,400,340,350,99,130,99,350,340,350,350],[36600,32800,11700,15500,27200,44600,27960,32300,39790,19680,144800,93500,125650,11682,45760,10989,128450,85680,173600,158900],[183,164,39,62,80,446,233,323,173,164,362,275,359,118,352,111,367,252,496,454],[100,90,46,68,100,100,58,72,100,72,100,70,93,30,100,28,74,50,100,92],[29,26,8,10,16,58,32,42,29,22,78,54,72,16,48,14,74,50,100,92]],"container":"<table class=\"cell-border stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Группа<\/th>\n      <th>Блюдо<\/th>\n      <th>Цена<\/th>\n      <th>Выручка, руб<\/th>\n      <th>Кол-во продаж, шт<\/th>\n      <th>Рейтинг в группе<\/th>\n      <th>Рейтинг общий<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthMenu":[[10,20,50,100,-1],["10","20","50","100","Все"]],"dom":"Blrftip","language":{"info":"Всего записей: _TOTAL_. Показаны с _START_ по _END_","lengthMenu":"Показать записей на страницу: _MENU_","search":"Поиск:","paginate":{"previous":"Назад","next":"Вперёд"}},"buttons":["csv","excel","copy"],"fixedHeader":true,"pageLength":10,"initComplete":"\nfunction(settings, json) {\n    $(this.api().table().header()).css(\n        {'background-color': 'navy', 'color': '#fff'});\n}\n","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 10 ? 'red' : value <= 20 ? 'yellow' : value <= 70 ? 'gray' : 'green'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 10 ? 'pink' : value <= 20 ? '#EEE685' : value <= 70 ? 'lightgray' : 'lightgreen'});\nDTWidget.formatCurrency(this, row, data, 3, '', 0, 3, '\\'', '.', true);\nDTWidget.formatCurrency(this, row, data, 4, '', 0, 3, '\\'', '.', true);\nDTWidget.formatCurrency(this, row, data, 2, '', 0, 3, '\\'', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+</div>
+
+<br>
+<hr size=1 style="color: #666666">
+<br>
+<div align=center>
+<p>
+Контакты:
+<a href="mailto:uolegv@gmail.com">uolegv@gmail.com</a></p>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

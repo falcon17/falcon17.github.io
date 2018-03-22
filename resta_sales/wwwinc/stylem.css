@@ -1,0 +1,26 @@
+.dropdown-menu>li>a {
+    color: #000000;
+}
+
+
+a {
+    color: #bb0000;
+    text-decoration: none;
+}
+
+a:focus,a:hover {
+    color: #ff3333;
+    text-decoration: underline
+}
+
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px
+}
+
+.ithumb {
+    border: 1px solid #555566;
+    border-radius: 0px;
+    padding: 0px;
+}
