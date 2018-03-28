@@ -254,43 +254,51 @@ $(document).ready(function () {
 </div>
 
 
-<p>Определяем рейтинг вкусовых добавок на основе объёмов продаж.</p>
+<!-- Определяем рейтинг вкусовых добавок на основе объёмов продаж. -->
 <div class="tabbable">
-<ul class="nav nav-tabs shiny-tab-input" id="res_prod115" data-tabsetid="4684">
+<ul class="nav nav-tabs shiny-tab-input" id="res_prod115" data-tabsetid="9184">
 <li class="active">
-<a href="#tab-4684-1" data-toggle="tab" data-value="Облако">Облако</a>
+<a href="#tab-9184-1" data-toggle="tab" data-value="Облако">Облако</a>
 </li>
 <li>
-<a href="#tab-4684-2" data-toggle="tab" data-value="Рейтинг">Рейтинг</a>
+<a href="#tab-9184-2" data-toggle="tab" data-value="Рейтинг">Рейтинг</a>
 </li>
 <li>
-<a href="#tab-4684-3" data-toggle="tab" data-value="Продажи">Продажи</a>
+<a href="#tab-9184-3" data-toggle="tab" data-value="Продажи">Продажи</a>
+</li>
+<li>
+<a href="#tab-9184-4" data-toggle="tab" data-value="Справка">Справка</a>
 </li>
 </ul>
-<div class="tab-content" data-tabsetid="4684">
-<div class="tab-pane active" data-value="Облако" id="tab-4684-1">
-<div id="htmlwidget-56d6585579e4dd63c6f5" style="width:960px;height:500px;" class="d3wordcloud html-widget"></div>
-<script type="application/json" data-for="htmlwidget-56d6585579e4dd63c6f5">{"x":{"data":{"text":["Апельсин","Арахис","Ваниль","Грейпфрут","Дыня","Карамель","Кокос","Лаванда","Лемонграсс","Мёд","Мороженое","Мята","Шоколад"],"freq":[100,17,94,46,74,56,11,56,17,40,66,64,90],"size":[100,17,94,46,74,56,11,56,17,40,66,64,90],"color":["#FFA500","#d0b078","#F3E5AB","#DC381F","#FDBCB4","#C68E17","#965a3e","#a6a6ed","#cec617","#ebaf4c","#cccccc","#48af48","#542a0c"]},"pars":{"font":"Open Sans","padding":10,"rotmin":0,"rotmax":0,"tooltip":true,"rangesizefont":[10,90],"sizescale":"linear","colorscale":"linear","spiral":"archimedean","colors":["#FFA500","#d0b078","#F3E5AB","#DC381F","#FDBCB4","#C68E17","#965a3e","#a6a6ed","#cec617","#ebaf4c","#cccccc","#48af48","#542a0c"],"every_word_has_own_color":true,"missing_colors":false,"label":null}},"evals":[],"jsHooks":[]}</script>
+<div class="tab-content" data-tabsetid="9184">
+<div class="tab-pane active" data-value="Облако" id="tab-9184-1">
+<div id="htmlwidget-3d0fa4e0c7cc7468cf9a" style="width:960px;height:500px;" class="d3wordcloud html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3d0fa4e0c7cc7468cf9a">{"x":{"data":{"text":["Апельсин","Арахис","Ваниль","Грейпфрут","Дыня","Карамель","Кокос","Лаванда","Лемонграсс","Мёд","Мороженое","Мята","Шоколад"],"freq":[100,17,94,46,74,56,11,56,17,40,66,64,90],"size":[100,17,94,46,74,56,11,56,17,40,66,64,90],"color":["#FFA500","#d0b078","#F3E5AB","#DC381F","#FDBCB4","#C68E17","#965a3e","#a6a6ed","#cec617","#ebaf4c","#cccccc","#48af48","#542a0c"]},"pars":{"font":"Open Sans","padding":10,"rotmin":0,"rotmax":0,"tooltip":true,"rangesizefont":[10,90],"sizescale":"linear","colorscale":"linear","spiral":"archimedean","colors":["#FFA500","#d0b078","#F3E5AB","#DC381F","#FDBCB4","#C68E17","#965a3e","#a6a6ed","#cec617","#ebaf4c","#cccccc","#48af48","#542a0c"],"every_word_has_own_color":true,"missing_colors":false,"label":null}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="tab-pane" data-value="Рейтинг" id="tab-4684-2">
+<div class="tab-pane" data-value="Рейтинг" id="tab-9184-2">
 <div class="row">
 <div class="col-sm-12">
-<div id="htmlwidget-6fb66653c133b61f3e24" style="width:960px;height:500px;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6fb66653c133b61f3e24">{"x":{"filter":"none","data":[["Апельсин","Ваниль","Шоколад","Дыня","Мороженое","Мята","Лаванда","Карамель","Грейпфрут","Мёд","Лемонграсс","Арахис","Кокос"],[100,94,90,74,66,64,56,56,46,40,17,17,11]],"container":"<table class=\"cell-border stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Вкус<\/th>\n      <th>Рейтинг<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthMenu":[[10,15,20,50,-1],["10","15","20","50","All"]],"dom":"Blrtip","language":{"info":"Всего записей: _TOTAL_. Показаны с _START_ по _END_","lengthMenu":"Показать записей на страницу: _MENU_","search":"Поиск:","paginate":{"previous":"Назад","next":"Вперёд"}},"buttons":["csv","excel","copy"],"fixedHeader":false,"pageLength":10,"initComplete":"\nfunction(settings, json) {\n    $(this.api().table().header()).css(\n        {'background-color': 'navy', 'color': '#fff'});\n}\n","columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 1, '', 0, 3, '\\'', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-a75a45fea236217aec99" style="width:960px;height:500px;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a75a45fea236217aec99">{"x":{"filter":"none","data":[["Апельсин","Ваниль","Шоколад","Дыня","Мороженое","Мята","Лаванда","Карамель","Грейпфрут","Мёд","Лемонграсс","Арахис","Кокос"],[100,94,90,74,66,64,56,56,46,40,17,17,11]],"container":"<table class=\"cell-border stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Вкус<\/th>\n      <th>Рейтинг<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthMenu":[[10,15,20,50,-1],["10","15","20","50","All"]],"dom":"Blrtip","language":{"info":"Всего записей: _TOTAL_. Показаны с _START_ по _END_","lengthMenu":"Показать записей на страницу: _MENU_","search":"Поиск:","paginate":{"previous":"Назад","next":"Вперёд"}},"buttons":["csv","excel","copy"],"fixedHeader":false,"pageLength":10,"initComplete":"\nfunction(settings, json) {\n    $(this.api().table().header()).css(\n        {'background-color': 'navy', 'color': '#fff'});\n}\n","columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 1, '', 0, 3, '\\'', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
-<div class="tab-pane" data-value="Продажи" id="tab-4684-3">
+<div class="tab-pane" data-value="Продажи" id="tab-9184-3">
 <div class="row">
 <div class="col-sm-12">
-<div id="htmlwidget-3d0fa4e0c7cc7468cf9a" style="width:960px;height:500px;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3d0fa4e0c7cc7468cf9a">{"x":{"filter":"none","extensions":["Buttons"],"data":[["Американо","Каппучино","Латте","Латте с лавандой","Латте с карамелью","Латте с дыней","Флэт-Вайт","Бамбл-апельсин","Раф-ваниль","Капучино с арахисом и мёдом","Бамбл-грейпфрут","Латте с мёдом","Ледяной латте с дыней","Латте с лемонграссом","Гляссе с ванилью и кокосом","Гляссе с ванилью","Мокко","Эспрессо с мятой"],[3842,2903,935,283,280,265,258,252,139,129,117,117,107,88,85,276,451,321],["Классика","Классика, Молоко","Классика, Молоко","Молоко, Лаванда","Молоко, Карамель","Молоко, Дыня","Молоко","Апельсин","Ваниль, Молоко","Арахис, Мёд, Молоко","Грейпфрут","Молоко, Мёд","Молоко, Дыня","Молоко, Лемонграсс","Ваниль, Кокос, Мороженое","Ваниль, Мороженое"," Классика, Шоколад"," Классика, Мята"]],"container":"<table class=\"cell-border stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Наименование<\/th>\n      <th>Продажи, колво порций<\/th>\n      <th>Ключевые метки, теги<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthMenu":[[10,20,50,100,-1],["10","20","50","100","All"]],"dom":"Blrftip","language":{"info":"Всего записей: _TOTAL_. Показаны с _START_ по _END_","lengthMenu":"Показать записей на страницу: _MENU_","search":"Поиск:","paginate":{"previous":"Назад","next":"Вперёд"}},"buttons":["csv","excel","copy"],"fixedHeader":false,"pageLength":10,"initComplete":"\nfunction(settings, json) {\n    $(this.api().table().header()).css(\n        {'background-color': 'navy', 'color': '#fff'});\n}\n","columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 1, '', 0, 3, '\\'', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-f9bb5b6e2503b71a72a3" style="width:960px;height:500px;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f9bb5b6e2503b71a72a3">{"x":{"filter":"none","extensions":["Buttons"],"data":[["Американо","Каппучино","Латте","Латте с лавандой","Латте с карамелью","Латте с дыней","Флэт-Вайт","Бамбл-апельсин","Раф-ваниль","Капучино с арахисом и мёдом","Бамбл-грейпфрут","Латте с мёдом","Ледяной латте с дыней","Латте с лемонграссом","Гляссе с ванилью и кокосом","Гляссе с ванилью","Мокко","Эспрессо с мятой"],[3842,2903,935,283,280,265,258,252,139,129,117,117,107,88,85,276,451,321],["Классика","Классика, Молоко","Классика, Молоко","Молоко, Лаванда","Молоко, Карамель","Молоко, Дыня","Молоко","Апельсин","Ваниль, Молоко","Арахис, Мёд, Молоко","Грейпфрут","Молоко, Мёд","Молоко, Дыня","Молоко, Лемонграсс","Ваниль, Кокос, Мороженое","Ваниль, Мороженое"," Классика, Шоколад"," Классика, Мята"]],"container":"<table class=\"cell-border stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Наименование<\/th>\n      <th>Продажи, колво порций<\/th>\n      <th>Ключевые метки, теги<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthMenu":[[10,20,50,100,-1],["10","20","50","100","All"]],"dom":"Blrftip","language":{"info":"Всего записей: _TOTAL_. Показаны с _START_ по _END_","lengthMenu":"Показать записей на страницу: _MENU_","search":"Поиск:","paginate":{"previous":"Назад","next":"Вперёд"}},"buttons":["csv","excel","copy"],"fixedHeader":false,"pageLength":10,"initComplete":"\nfunction(settings, json) {\n    $(this.api().table().header()).css(\n        {'background-color': 'navy', 'color': '#fff'});\n}\n","columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 1, '', 0, 3, '\\'', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div class="tab-pane" data-value="Справка" id="tab-9184-4">
+<div class="row">
+<div class="col-sm-12"><p>Рейтинг вкусовых добавок в кофе, считается на основе объёмов продаж.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>Рейтинг вкусовых добавок в кофе, считается на основе объёмов продаж.</p>
 
 <br>
 <hr size=1 style="color: #666666">

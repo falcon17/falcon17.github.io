@@ -2,6 +2,9 @@
     color: #000000;
 }
 
+h1.title {
+    margin-top: 10px;
+}
 
 a {
     color: #bb0000;
