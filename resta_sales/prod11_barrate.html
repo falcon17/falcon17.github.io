@@ -194,7 +194,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Анализ Продаж Ресторана</a>
+      <a class="navbar-brand" href="index.html">Анализ Продаж</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -210,6 +210,18 @@ $(document).ready(function () {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="incom10_planfact.html">Выручка план-факт</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Клиенты
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="cust11_abc.html">ABC-анализ клиентов</a>
     </li>
   </ul>
 </li>
@@ -257,14 +269,14 @@ $(document).ready(function () {
 <p>Рейтинг напитков составляется по результатам продаж, на основе выручки и количестве проданных порций. Каждый напиток оценивается в целом и в контексте своей группы.</p>
 <div id="-" class="section level1">
 <h1>Топ напитков</h1>
-<div id="htmlwidget-56d6585579e4dd63c6f5" style="width:100%;height:336px;" class="d3wordcloud html-widget"></div>
-<script type="application/json" data-for="htmlwidget-56d6585579e4dd63c6f5">{"x":{"data":{"text":["Чай черный","Чай ягодный","Гиннес 0.5","Чай зелёный","Шпатен 0.5","Кофе Американо","Крушовица 0.5","Чай травяной сбор","Морс клюквенный","Кофе Эспрессо"],"freq":[100,92,78,74,72,58,54,50,48,42],"size":[100,92,78,74,72,58,54,50,48,42]},"pars":{"font":"Open Sans","padding":10,"rotmin":0,"rotmax":0,"tooltip":false,"rangesizefont":[10,90],"sizescale":"linear","colorscale":"linear","spiral":"archimedean","colors":["#00cc00","#009900"],"every_word_has_own_color":false,"missing_colors":false,"label":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3d0fa4e0c7cc7468cf9a" style="width:100%;height:336px;" class="d3wordcloud html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3d0fa4e0c7cc7468cf9a">{"x":{"data":{"text":["Чай черный","Чай ягодный","Гиннес 0.5","Чай зелёный","Шпатен 0.5","Кофе Американо","Крушовица 0.5","Чай травяной сбор","Морс клюквенный","Кофе Эспрессо"],"freq":[100,92,78,74,72,58,54,50,48,42],"size":[100,92,78,74,72,58,54,50,48,42]},"pars":{"font":"Open Sans","padding":10,"rotmin":0,"rotmax":0,"tooltip":false,"rangesizefont":[10,90],"sizescale":"linear","colorscale":"linear","spiral":"archimedean","colors":["#00cc00","#009900"],"every_word_has_own_color":false,"missing_colors":false,"label":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="-" class="section level1">
 <h1>Детальная таблица</h1>
 <p>Рейтинг измеряется по шкале от 0 до 100 баллов. По каждому напитку указан рейтинг в своей группе и общий, в целом по меню. Разметка цветом: зелёный - хиты, серый - середняки, красный - аутсайдеры, жёлтый - на грани аутсайдеров.</p>
-<div id="htmlwidget-6fb66653c133b61f3e24" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6fb66653c133b61f3e24">{"x":{"filter":"none","extensions":["Buttons"],"data":[["Вино","Вино","Коктейли акогольные","Коктейли акогольные","Коктейли акогольные","Кофе","Кофе","Кофе","Крепкий Алкоголь","Крепкий Алкоголь","Пиво","Пиво","Пиво","Соки и морсы","Соки и морсы","Соки и морсы","Чай","Чай","Чай","Чай"],["Вино белое бокал","Вино красное бокал","Б52","Маргарита","Мохито","Кофе Американо","Кофе Капучино","Кофе Эспрессо","Виски 50 мл","Ром 50 мл","Гиннес 0.5","Крушовица 0.5","Шпатен 0.5","Апельсиновый фреш","Морс клюквенный","Томатный сок","Чай зелёный","Чай травяной сбор","Чай черный","Чай ягодный"],[200,200,300,250,340,100,120,100,230,120,400,340,350,99,130,99,350,340,350,350],[36600,32800,11700,15500,27200,44600,27960,32300,39790,19680,144800,93500,125650,11682,45760,10989,128450,85680,173600,158900],[183,164,39,62,80,446,233,323,173,164,362,275,359,118,352,111,367,252,496,454],[100,90,46,68,100,100,58,72,100,72,100,70,93,30,100,28,74,50,100,92],[29,26,8,10,16,58,32,42,29,22,78,54,72,16,48,14,74,50,100,92]],"container":"<table class=\"cell-border stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Группа<\/th>\n      <th>Блюдо<\/th>\n      <th>Цена<\/th>\n      <th>Выручка, руб<\/th>\n      <th>Кол-во продаж, шт<\/th>\n      <th>Рейтинг в группе<\/th>\n      <th>Рейтинг общий<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthMenu":[[10,20,50,100,-1],["10","20","50","100","Все"]],"dom":"Blrftip","language":{"info":"Всего записей: _TOTAL_. Показаны с _START_ по _END_","lengthMenu":"Показать записей на страницу: _MENU_","search":"Поиск:","paginate":{"previous":"Назад","next":"Вперёд"}},"buttons":["csv","excel","copy"],"fixedHeader":true,"pageLength":10,"initComplete":"\nfunction(settings, json) {\n    $(this.api().table().header()).css(\n        {'background-color': 'navy', 'color': '#fff'});\n}\n","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 10 ? 'red' : value <= 20 ? 'yellow' : value <= 70 ? 'gray' : 'green'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 10 ? 'pink' : value <= 20 ? '#EEE685' : value <= 70 ? 'lightgray' : 'lightgreen'});\nDTWidget.formatCurrency(this, row, data, 3, '', 0, 3, '\\'', '.', true);\nDTWidget.formatCurrency(this, row, data, 4, '', 0, 3, '\\'', '.', true);\nDTWidget.formatCurrency(this, row, data, 2, '', 0, 3, '\\'', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-a75a45fea236217aec99" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a75a45fea236217aec99">{"x":{"filter":"none","extensions":["Buttons"],"data":[["Вино","Вино","Коктейли акогольные","Коктейли акогольные","Коктейли акогольные","Кофе","Кофе","Кофе","Крепкий Алкоголь","Крепкий Алкоголь","Пиво","Пиво","Пиво","Соки и морсы","Соки и морсы","Соки и морсы","Чай","Чай","Чай","Чай"],["Вино белое бокал","Вино красное бокал","Б52","Маргарита","Мохито","Кофе Американо","Кофе Капучино","Кофе Эспрессо","Виски 50 мл","Ром 50 мл","Гиннес 0.5","Крушовица 0.5","Шпатен 0.5","Апельсиновый фреш","Морс клюквенный","Томатный сок","Чай зелёный","Чай травяной сбор","Чай черный","Чай ягодный"],[200,200,300,250,340,100,120,100,230,120,400,340,350,99,130,99,350,340,350,350],[36600,32800,11700,15500,27200,44600,27960,32300,39790,19680,144800,93500,125650,11682,45760,10989,128450,85680,173600,158900],[183,164,39,62,80,446,233,323,173,164,362,275,359,118,352,111,367,252,496,454],[100,90,46,68,100,100,58,72,100,72,100,70,93,30,100,28,74,50,100,92],[29,26,8,10,16,58,32,42,29,22,78,54,72,16,48,14,74,50,100,92]],"container":"<table class=\"cell-border stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Группа<\/th>\n      <th>Блюдо<\/th>\n      <th>Цена<\/th>\n      <th>Выручка, руб<\/th>\n      <th>Кол-во продаж, шт<\/th>\n      <th>Рейтинг в группе<\/th>\n      <th>Рейтинг общий<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthMenu":[[10,20,50,100,-1],["10","20","50","100","Все"]],"dom":"Blrftip","language":{"info":"Всего записей: _TOTAL_. Показаны с _START_ по _END_","lengthMenu":"Показать записей на страницу: _MENU_","search":"Поиск:","paginate":{"previous":"Назад","next":"Вперёд"}},"buttons":["csv","excel","copy"],"fixedHeader":true,"pageLength":10,"initComplete":"\nfunction(settings, json) {\n    $(this.api().table().header()).css(\n        {'background-color': 'navy', 'color': '#fff'});\n}\n","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 10 ? 'red' : value <= 20 ? 'yellow' : value <= 70 ? 'gray' : 'green'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 10 ? 'pink' : value <= 20 ? '#EEE685' : value <= 70 ? 'lightgray' : 'lightgreen'});\nDTWidget.formatCurrency(this, row, data, 3, '', 0, 3, '\\'', '.', true);\nDTWidget.formatCurrency(this, row, data, 4, '', 0, 3, '\\'', '.', true);\nDTWidget.formatCurrency(this, row, data, 2, '', 0, 3, '\\'', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
 </div>
 
 <br>
